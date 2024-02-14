@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'lib-bts-custom-lib',
@@ -10,10 +10,15 @@ import { Component, OnInit } from '@angular/core';
         </li>
       </ul>
     </div>
+    <div *ngIf="myBias">
+      My bias is {{myBias}}
+    </div>
+
   `,
   styles: [],
 })
 export class BtsCustomLibComponent implements OnInit {
+  @Input() myBias!: string;
   bts = [
     'Kim Namjoon',
     'Kim SoekJin',
